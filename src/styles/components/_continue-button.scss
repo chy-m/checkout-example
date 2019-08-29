@@ -1,0 +1,21 @@
+.continue-button {
+  position: relative;
+  display: block;
+  padding: 0;
+  margin: 0 0 0 auto;
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+    Droid Sans, Helvetica Neue, sans-serif;
+  font-weight: bold;
+  text-rendering: optimizeLegibility;
+  font-size: 1.38316rem;
+  line-height: 1.1;
+  color: #6bcfa0;
+  background-color: transparent;
+  border: 0px;
+  text-decoration: none;
+  text-transform: capitalize;
+  white-space: nowrap;
+  outline: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}

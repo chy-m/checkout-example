@@ -1,6 +1,7 @@
 import React from 'react'
 // Components
 import BackButton from './components/BackButton'
+import ContinueButton from './components/ContinueButton'
 import Header from './components/Header'
 import Heading from './components/Heading'
 import PaymentIntervals from './components/PaymentIntervals'
@@ -56,6 +57,7 @@ class App extends React.PureComponent {
             onChangeState={this.onChangeState}
             paymentType={paymentType}
           />
+          {paymentType !== '' && <ContinueButton />}
         </div>
       </div>
     )
