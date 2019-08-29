@@ -1,5 +1,38 @@
 .payment-intervals {
   display: flex;
-  justify-content: space-between;
-  height: 150px;
+  margin-bottom: 30px;
+  .button {
+    position: relative;
+    display: block;
+    padding: 0;
+    margin: 0 10px 0 0;
+    font-family: 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans,
+      Droid Sans, Helvetica Neue, sans-serif;
+    font-weight: bold;
+    text-rendering: optimizeLegibility;
+    font-size: 1.38316rem;
+    line-height: 1.1;
+    color: #999dac;
+    background-color: transparent;
+    border: 0;
+    text-decoration: none;
+    text-transform: capitalize;
+    white-space: nowrap;
+    outline: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    &.button--active {
+      color: #276bfc;
+      &::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -8px;
+        height: 2px;
+        width: 60%; /* or 100px */
+        border-radius: 30px;
+        border-bottom: 3px solid #276bfc;
+      }
+    }
+  }
 }

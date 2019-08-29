@@ -1,5 +1,5 @@
 import React from 'react'
 
-const SecondaryHeading = ({ title }) => <h2>{title}</h2>
+const SecondaryHeading = ({ title }) => <h3>{title}</h3>
 
 export default SecondaryHeading
