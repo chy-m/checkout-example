@@ -42,7 +42,7 @@ class App extends React.PureComponent {
   }
 
   render() {
-    const { paymentInterval } = this.state
+    const { paymentInterval, paymentType } = this.state
     return (
       <div className='App'>
         <Header />
@@ -54,7 +54,7 @@ class App extends React.PureComponent {
             {apiResponse
               .filter(type => type['interval'] === paymentInterval)
               .map(type => (
-                <PaymentType onChangeState={this.onChangeState} type={type} />
+                <PaymentType onChangeState={this.onChangeState} paymentType={paymentType} type={type} />
               ))}
           </div>
         </div>
