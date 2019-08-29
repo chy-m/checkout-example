@@ -6,6 +6,7 @@ const PaymentIntervals = ({ onChangeState, paymentInterval }) => (
   <div className='payment-intervals'>
     {intervalType.map(type => (
       <button
+        key={type}
         className={paymentInterval === type ? 'button button--active' : 'button'}
         onClick={() => onChangeState('paymentInterval', type)}
       >

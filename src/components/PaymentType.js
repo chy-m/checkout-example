@@ -1,13 +1,15 @@
 import React from 'react'
 
-const PaymentType = ({ onChangeState, paymentType, type }) => (
+const PaymentType = ({ calculatePayment, onChangeState, paymentInterval, paymentType, type }) => (
   <div
     className='payment-type-card'
     onClick={() => onChangeState('paymentType', `${type.interval}-${type.paymentCount}`)}
   >
     <div className='card__left'>
       <p className='primary-paragraph'>Finishes 10th of February</p>
-      <p className='secondary-paragraph'>8 x $27.50 · Fortnightly · Inc.fee</p>
+      <p className='secondary-paragraph'>
+        {type.paymentCount} x {calculatePayment(type.paymentCount)} · {paymentInterval} · Inc.fee
+      </p>
     </div>
     {paymentType === `${type.interval}-${type.paymentCount}` && <p className='card__right'>✓</p>}
   </div>
