@@ -1,6 +1,7 @@
 import React from 'react'
 // Components
 import BackButton from './components/BackButton'
+import EmptyPaymentType from './components/EmptyPaymentType'
 import Header from './components/Header'
 import Heading from './components/Heading'
 import PaymentIntervals from './components/PaymentIntervals'
@@ -43,6 +44,7 @@ class App extends React.PureComponent {
 
   render() {
     const { paymentInterval, paymentType } = this.state
+    const filteredApiResponse = apiResponse.filter(type => type['interval'] === paymentInterval)
     return (
       <div className='App'>
         <Header />
@@ -51,11 +53,13 @@ class App extends React.PureComponent {
           <Heading title='Customise your plan' />
           <PaymentIntervals onChangeState={this.onChangeState} paymentInterval={paymentInterval} />
           <div className='payment-types'>
-            {apiResponse
-              .filter(type => type['interval'] === paymentInterval)
-              .map(type => (
+            {filteredApiResponse.length > 0 ? (
+              filteredApiResponse.map(type => (
                 <PaymentType onChangeState={this.onChangeState} paymentType={paymentType} type={type} />
-              ))}
+              ))
+            ) : (
+              <EmptyPaymentType title='Sorry! There are no current plans within this criteria, please check out our other ones' />
+            )}
           </div>
         </div>
       </div>

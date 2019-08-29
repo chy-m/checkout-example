@@ -1,5 +1,5 @@
 import React from 'react'
 
-const BackButton = () => <p>{'< Back'}</p>
+const BackButton = () => <h4>{'< Back'}</h4>
 
 export default BackButton
