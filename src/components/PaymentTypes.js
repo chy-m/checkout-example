@@ -4,7 +4,14 @@ import ContinueButton from './ContinueButton'
 import EmptyPaymentType from './EmptyPaymentType'
 import PaymentType from './PaymentType'
 
-const PaymentTypes = ({ calculatePayment, filteredApiResponse, onChangeState, paymentInterval, paymentType }) => {
+const PaymentTypes = ({
+  calculateDate,
+  calculatePayment,
+  filteredApiResponse,
+  onChangeState,
+  paymentInterval,
+  paymentType
+}) => {
   const isEmpty = filteredApiResponse.length > 0
   return (
     <div className='payment-types'>
@@ -12,6 +19,7 @@ const PaymentTypes = ({ calculatePayment, filteredApiResponse, onChangeState, pa
         filteredApiResponse.map((type, index) => (
           <PaymentType
             key={index}
+            calculateDate={calculateDate}
             calculatePayment={calculatePayment}
             onChangeState={onChangeState}
             paymentInterval={paymentInterval}

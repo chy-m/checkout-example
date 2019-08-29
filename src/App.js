@@ -1,4 +1,6 @@
 import React from 'react'
+// Packages
+import moment from 'moment'
 // Components
 import BackButton from './components/BackButton'
 import Header from './components/Header'
@@ -43,6 +45,23 @@ class App extends React.PureComponent {
 
   calculatePayment = length => `$${(this.state.cartTotal / length).toFixed(2)}`
 
+  calculateDate = length => {
+    const { paymentInterval } = this.state
+    if (paymentInterval === 'weekly') {
+      return moment()
+        .add(length, 'weeks')
+        .format('Do of MMMM YYYY')
+    } else if (paymentInterval === 'fortnightly') {
+      return moment()
+        .add(length * 2, 'weeks')
+        .format('Do of MMMM YYYY')
+    } else {
+      return moment()
+        .add(length, 'months')
+        .format('Do of MMMM YYYY')
+    }
+  }
+
   render() {
     const { cartTotal, paymentInterval, paymentType } = this.state
     const filteredApiResponse = apiResponse.filter(type => type['interval'] === paymentInterval)
@@ -54,6 +73,7 @@ class App extends React.PureComponent {
           <Heading title='Customise your plan' />
           <PaymentIntervals onChangeState={this.onChangeState} paymentInterval={paymentInterval} />
           <PaymentTypes
+            calculateDate={this.calculateDate}
             calculatePayment={this.calculatePayment}
             filteredApiResponse={filteredApiResponse}
             onChangeState={this.onChangeState}
