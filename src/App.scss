@@ -626,13 +626,9 @@ pre tt:after {
 }
 
 // // Constants
-// @import '../styles/constants/breakpoints';
-// @import '../styles/constants/colors';
-// @import '../styles/constants/fonts';
+@import './styles/constants/breakpoints';
+@import './styles/constants/fonts';
 
 // // Components
-@import './styles/header';
-@import './styles/payment-intervals';
-// @import '../styles/components/icon';
-// @import '../styles/components/list';
-// @import '../styles/components/work';
+@import './styles/components/header';
+@import './styles/components/payment-intervals';
