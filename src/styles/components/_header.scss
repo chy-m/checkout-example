@@ -1,13 +1,30 @@
 .header {
   display: flex;
   justify-content: space-between;
-  height: 150px;
-  img {
-    width: 150px;
-    height: auto;
+  align-items: center;
+  height: 70px;
+  background-color: white;
+  .header__logo {
+    height: 30px;
+    margin: 0 20px;
     object-fit: contain;
   }
   .header__checkout {
     display: flex;
+    align-items: center;
+    height: 50px;
+    margin: 0 20px;
+    .checkout__cart {
+      height: 25px;
+      margin: 0 5px;
+    }
+    p {
+      margin: 0;
+      font-weight: $bold;
+    }
+  }
+  @include breakpoint(md) {
+  }
+  @include breakpoint(lg) {
   }
 }

@@ -1,13 +1,14 @@
 import React from 'react'
 // Icons
 import cart from '../assets/cart.png'
+import logo from '../assets/logo.png'
 
 const Header = () => (
   <div className='header'>
-    <img src='http://www.ipswichcitymechanical.com.au/wp-content/uploads/2018/05/OPENPAY.png' alt='Openpay logo' />
+    <img className='header__logo' src={logo} alt='openpay logo' />
     <div className='header__checkout'>
-      <img src={cart} alt='Openpay logo' />
-      <p>123.45</p>
+      <img className='checkout__cart' src={cart} alt='cart logo' />
+      <p>$123.45</p>
     </div>
   </div>
 )

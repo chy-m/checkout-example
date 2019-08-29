@@ -7,15 +7,21 @@ import PaymentType from './components/PaymentType'
 // Others
 import './App.scss'
 
-function App() {
-  return (
-    <div className='App'>
-      <Header />
-      <Heading title='Customise your plan' />
-      <PaymentIntervals />
-      <PaymentType />
-    </div>
-  )
+class App extends React.PureComponent {
+  constructor(props) {
+    super(props)
+    this.state = {}
+  }
+  render() {
+    return (
+      <div className='App'>
+        <Header />
+        <Heading title='Customise your plan' />
+        <PaymentIntervals />
+        <PaymentType />
+      </div>
+    )
+  }
 }
 
 export default App
