@@ -34,11 +34,11 @@ const apiResponse = [
 class App extends React.PureComponent {
   constructor(props) {
     super(props)
-    this.state = { paymentInterval: 'weekly' }
+    this.state = { paymentInterval: 'weekly', paymentType: '' }
   }
 
-  onChangeInterval = interval => {
-    this.setState({ paymentInterval: interval })
+  onChangeState = (state, key) => {
+    this.setState({ [state]: key })
   }
 
   render() {
@@ -49,11 +49,13 @@ class App extends React.PureComponent {
         <div className='body'>
           <BackButton />
           <Heading title='Customise your plan' />
-          <PaymentIntervals onChangeInterval={this.onChangeInterval} paymentInterval={paymentInterval} />
+          <PaymentIntervals onChangeState={this.onChangeState} paymentInterval={paymentInterval} />
           <div className='payment-types'>
-            <PaymentType />
-            <PaymentType />
-            <PaymentType />
+            {apiResponse
+              .filter(type => type['interval'] === paymentInterval)
+              .map(type => (
+                <PaymentType onChangeState={this.onChangeState} type={type} />
+              ))}
           </div>
         </div>
       </div>
