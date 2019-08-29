@@ -1,0 +1,37 @@
+.payment-types {
+  display: flex;
+  flex-direction: column;
+  .payment-type-card:first-child {
+    border-radius: 6px 6px 0 0;
+  }
+  .payment-type-card:last-child {
+    border-radius: 0 0 6px 6px;
+  }
+  .payment-type-card {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding: 10px;
+    margin-bottom: 2px;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+    .card__left {
+      width: 90%;
+      .primary-paragraph {
+        margin: 0;
+        color: #51455c;
+      }
+      .secondary-paragraph {
+        margin: 0;
+        color: #9698a3;
+      }
+    }
+    .card__right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 10%;
+      margin: 0;
+      color: #6bcfa0;
+    }
+  }
+}

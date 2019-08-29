@@ -8,6 +8,29 @@ import PaymentType from './components/PaymentType'
 // Others
 import './App.scss'
 
+const apiResponse = [
+  {
+    interval: 'weekly',
+    paymentCount: 6
+  },
+  {
+    interval: 'weekly',
+    paymentCount: 8
+  },
+  {
+    interval: 'weekly',
+    paymentCount: 12
+  },
+  {
+    interval: 'monthly',
+    paymentCount: 2
+  },
+  {
+    interval: 'monthly',
+    paymentCount: 3
+  }
+]
+
 class App extends React.PureComponent {
   constructor(props) {
     super(props)
@@ -27,7 +50,11 @@ class App extends React.PureComponent {
           <BackButton />
           <Heading title='Customise your plan' />
           <PaymentIntervals onChangeInterval={this.onChangeInterval} paymentInterval={paymentInterval} />
-          <PaymentType />
+          <div className='payment-types'>
+            <PaymentType />
+            <PaymentType />
+            <PaymentType />
+          </div>
         </div>
       </div>
     )

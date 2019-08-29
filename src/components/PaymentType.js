@@ -1,9 +1,12 @@
 import React from 'react'
 
 const PaymentType = () => (
-  <div className='payment-type'>
-    <p>Finishes 10th august</p>
-    <p>6 x something something</p>
+  <div className='payment-type-card'>
+    <div className='card__left'>
+      <p className='primary-paragraph'>Finishes 10th of February</p>
+      <p className='secondary-paragraph'>8 x $27.50 · Fortnightly · Inc.fee</p>
+    </div>
+    <p className='card__right'>✓</p>
   </div>
 )
 

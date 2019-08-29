@@ -1,6 +1,4 @@
-import React, { Fragment } from 'react'
-// Components
-import SecondaryHeading from './SecondaryHeading'
+import React from 'react'
 
 const intervalType = ['weekly', 'fortnightly', 'monthly']
 
