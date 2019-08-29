@@ -1,0 +1,13 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  height: 150px;
+  img {
+    width: 150px;
+    height: auto;
+    object-fit: contain;
+  }
+  .header__checkout {
+    display: flex;
+  }
+}
