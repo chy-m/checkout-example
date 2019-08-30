@@ -9,29 +9,7 @@ import PaymentIntervals from './components/PaymentIntervals'
 import PaymentTypes from './components/PaymentTypes'
 // Others
 import './App.scss'
-
-const apiResponse = [
-  {
-    interval: 'weekly',
-    paymentCount: 6
-  },
-  {
-    interval: 'weekly',
-    paymentCount: 8
-  },
-  {
-    interval: 'weekly',
-    paymentCount: 12
-  },
-  {
-    interval: 'monthly',
-    paymentCount: 2
-  },
-  {
-    interval: 'monthly',
-    paymentCount: 3
-  }
-]
+import { apiResponse } from './constants/apiResponse'
 
 class App extends React.PureComponent {
   constructor(props) {
