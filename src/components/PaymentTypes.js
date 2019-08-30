@@ -17,17 +17,19 @@ const PaymentTypes = ({
     <Fragment>
       <div className='payment-types'>
         {isEmpty ? (
-          filteredApiResponse.map((type, index) => (
-            <PaymentType
-              key={index}
-              calculateDate={calculateDate}
-              calculatePayment={calculatePayment}
-              onChangeState={onChangeState}
-              paymentInterval={paymentInterval}
-              paymentType={paymentType}
-              type={type}
-            />
-          ))
+          filteredApiResponse
+            .sort((a, b) => a['paymentCount'] - b['paymentCount'])
+            .map((type, index) => (
+              <PaymentType
+                key={index}
+                calculateDate={calculateDate}
+                calculatePayment={calculatePayment}
+                onChangeState={onChangeState}
+                paymentInterval={paymentInterval}
+                paymentType={paymentType}
+                type={type}
+              />
+            ))
         ) : (
           <EmptyPaymentType title='Sorry! There are no current plans within this criteria, please check out our other ones' />
         )}
