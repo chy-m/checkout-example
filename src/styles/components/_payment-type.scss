@@ -1,6 +1,7 @@
 .payment-types {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
   .payment-type-card:first-child {
     border-radius: 6px 6px 0 0;
   }
